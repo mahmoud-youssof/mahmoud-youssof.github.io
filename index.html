@@ -1,73 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Name Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .form-container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 300px;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #555;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 18px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #0078d7;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #005fa3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohba Tech - Job Application</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="form-container">
-    <h2>Enter Your Name</h2>
-    <form action="https://n8n.sohbatech.online/webhook-test/0bcf21c4-c2a7-46b0-9c6c-704d46060bdd"  method="POST" >
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName">
 
-      <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="lastName">
+    <!-- Header Section -->
+    <header class="header-section">
+        <img src="logo.png" alt="Sohba Tech Logo" class="brand-logo">
+        <h1 class="page-title">Job Application</h1>
+    </header>
 
-      <button  type="submit">Submit</button>
-    </form>
-  </div>
+    <!-- Main Container Layout Card Box -->
+    <main class="form-container">
+        <!-- Visual Node Anchor Lines mimicking the exact design layout -->
+        <div class="node-line-top"></div>
+        <div class="corner-node-left">
+            <span class="dot large"></span>
+            <span class="dot small"></span>
+        </div>
+        
+        <h2 class="form-heading">Join Our Team - Application for Employment</h2>
+        <form action="https://n8n.sohbatech.online/webhook/0bcf21c4-c2a7-46b0-9c6c-704d46060bdd" method="POST" >
+            
+            <!-- 3 Columns for Names Section -->
+            <div class="form-row grid-3">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="middle-name">Middle Name</label>
+                    <input type="text" id="middle-name" name="middle_name">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last_name" required>
+                </div>
+            </div>
 
-  
+            <!-- 2 Columns for Phone/Email Section -->
+            <div class="form-row grid-2">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" pattern="^01[0-2,5]{1}[0-9]{8}$" placeholder="01xxxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+
+            <!-- Full Width Governorate Dropdown Section -->
+            <div class="form-group full-width">
+                <label for="address-state">Address (Select your Egyptian State)</label>
+                <div class="select-wrapper">
+                    <select id="address-state" name="address_state" required>
+                        <option value="" disabled selected></option>
+                        <option value="Cairo">Cairo</option>
+                        <option value="Alexandria">Alexandria</option>
+                        <option value="Giza">Giza</option>
+                        <option value="Qalyubia">Qalyubia</option>
+                        <option value="Sharqia">Sharqia</option>
+                        <option value="Dakahlia">Dakahlia</option>
+                        <option value="Monufia">Monufia</option>
+                        <option value="Gharbia">Gharbia</option>
+                        <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                        <option value="Beheira">Beheira</option>
+                        <option value="Damietta">Damietta</option>
+                        <option value="Port Said">Port Said</option>
+                        <option value="Ismailia">Ismailia</option>
+                        <option value="Suez">Suez</option>
+                        <option value="North Sinai">North Sinai</option>
+                        <option value="South Sinai">South Sinai</option>
+                        <option value="Faiyum">Faiyum</option>
+                        <option value="Beni Suef">Beni Suef</option>
+                        <option value="Minya">Minya</option>
+                        <option value="Asyut">Asyut</option>
+                        <option value="Sohag">Sohag</option>
+                        <option value="Qena">Qena</option>
+                        <option value="Luxor">Luxor</option>
+                        <option value="Aswan">Aswan</option>
+                        <option value="Red Sea">Red Sea</option>
+                        <option value="New Valley">New Valley</option>
+                        <option value="Matrouh">Matrouh</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Exact Pill Shape Action Button Area with Embedded Logo Emblem -->
+            <div class="form-footer">
+                <button type="submit" class="submit-button">
+                    <span>Submit Application</span>
+                    <div class="btn-emblem"></div>
+                </button>
+            </div>
+
+        </form>
+        
+        <div class="node-line-bottom"></div>
+    </main>
+
 </body>
 </html>
