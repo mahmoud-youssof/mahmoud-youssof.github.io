@@ -3,6 +3,28 @@
 <head>
    <meta http-equiv="refresh" content="0; url='https://api.whatsapp.com/send?phone=201144454553&text=afs'" />
 </head>
+<script>
+async function sendPostAndRedirect() {
+    const response = await fetch('/your-api-endpoint', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ key: 'value' })
+    });
+
+    if (response.ok) {
+        // Option 1: Standard redirect (keeps history)
+        window.location.href = '/success-page';
+        
+        // Option 2: Replace current page (no history)
+        // window.location.replace('/success-page');
+    } else {
+        console.error('Submission failed');
+    }
+}
+</script>
+
 <body>
    <p>You will be redirected to example.com soon!</p>
 </body>
